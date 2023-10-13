@@ -38,14 +38,34 @@ let Types = [];
 
 function randomNames() {
     for(i = 0; i < 5; i++) {
-        x = Math.floor(Math.random() * 10)
-        Survivants.push(Noms[x])
-
-        y = Math.floor(Math.random() * 5)
-        Types.push(Caractéristiques[y].name)
-
+        x = Math.floor(Math.random() * Noms.length)
+        const randomNom = Noms[x]
+        
+        y = Math.floor(Math.random() * Caractéristiques.length)
+        const randomType = Caractéristiques[y].name
+        
+        const Survivant = {
+            nom : randomNom,
+            type : randomType
+        }
+        
+        Survivants.push(Survivant)
     }
-    console.log(Survivants)
-    console.log(Types)
 }
 randomNames();
+
+function Attaque (Survivant) {
+    const caractéristique = Survivant.type;
+    const x = Math.random()
+
+    if(probaDeath > x) {
+        console.log("Jason a tué " + Survivant.nom)
+
+    } else if(probaDmg > x) {
+    
+
+    }
+}
+
+console.log("CEST PAS FINI JE SAIS")
+
